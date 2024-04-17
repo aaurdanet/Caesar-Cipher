@@ -20,8 +20,8 @@ The Caesar Cipher shifts each letter in a message by a certain number of places 
 
 Notes
 
-    The script preserves spaces and non-alphabetic characters.
-    If the shift number is greater than 26, it wraps around to start from the beginning of the alphabet again.
+The script preserves spaces and non-alphabetic characters.
+If the shift number is greater than 26, it wraps around to start from the beginning of the alphabet again.
 
 Enjoy encrypting and decrypting messages using the Caesar Cipher!
 
