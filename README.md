@@ -1,27 +1,78 @@
-# Caesar Cipher
+Caesar Cipher Program
 
-This is a Python implementation of the Caesar Cipher, a simple encryption technique.
+This Python program implements a Caesar Cipher, a type of substitution cipher where each letter in the plaintext is shifted by a certain number of positions down or up the alphabet. The program can both encode and decode messages using a user-specified shift value. Additionally, it includes a brute-force attack mode to decrypt a message by trying all possible shift values.
+Features
 
-## Overview
+    Encoding and Decoding: The program allows users to encode a message by shifting the letters forward and decode it by shifting them backward.
+    Brute-force Attack: When decoding, the user has the option to perform a brute-force attack, which will try all possible shifts (1 through 25) to decrypt the message.
+    Input Validation: The program handles non-alphabet characters (such as numbers, spaces, and punctuation) by leaving them unchanged.
+    Continuous Use: After each operation, users are prompted to continue with another operation or exit the program.
 
-The Caesar Cipher shifts each letter in a message by a certain number of places down the alphabet. This script allows you to encode or decode messages using the Caesar Cipher.
+Usage
+Running the Program
 
-## Files
+    Starting: When the program starts, it displays a logo (imported from the art module) and then prompts the user to choose between encoding or decoding a message.
 
-- `art.py`: Contains ASCII art for the script's logo.
+    Input:
+        The user inputs whether they want to "encode" or "decode" a message.
+        If decoding, the user is asked if they want to perform a brute-force attack.
+        The user then inputs the message they want to process.
+        If not using brute-force, the user inputs the shift value (a number).
 
-## How to Use
+    Output:
+        The program displays the encoded or decoded message.
+        If a brute-force attack was chosen, the program will display all possible decoded messages with different shifts.
 
-1. Run the script.
-2. Choose whether you want to encode or decode a message.
-3. Enter your message.
-4. Enter the shift number (how many places to shift each letter).
-5. The script will output the encoded or decoded message.
+    Repeating: After completing one operation, the user can choose to perform another operation or exit the program.
+
+Example
+
+    Encoding:
+
+    python
+
+Type 'encode' to encrypt, type 'decode' to decrypt:
+encode
+Type your message:
+hello
+Type the shift number:
+5
+Here's the encoded result: mjqqt
+
+Decoding:
+
+python
+
+Type 'encode' to encrypt, type 'decode' to decrypt:
+decode
+Would you like to bruteforce? Type 'Yes'. Otherwise Type 'No'
+no
+Type your message:
+mjqqt
+Type the shift number:
+5
+Here's the decoded result: hello
+
+Brute-force Attack:
+
+python
+
+    Type 'encode' to encrypt, type 'decode' to decrypt:
+    decode
+    Would you like to bruteforce? Type 'Yes'. Otherwise Type 'No'
+    yes
+    Type your message:
+    mjqqt
+    Here's the decoded result: lipps
+    Here's the decoded result: khoor
+    Here's the decoded result: jgnnq
+    ...
 
 Notes
 
-The script preserves spaces and non-alphabetic characters.
-If the shift number is greater than 26, it wraps around to start from the beginning of the alphabet again.
+    The program automatically adjusts the shift value if it exceeds 26 (the length of the alphabet).
+    This is a simple implementation and assumes English alphabet (a-z).
 
-Enjoy encrypting and decrypting messages using the Caesar Cipher!
+Dependencies
 
+    art module is required for displaying the logo.
