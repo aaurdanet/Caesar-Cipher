@@ -6,7 +6,7 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
             'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 
-def caesar(start_text, shift_amount, cipher_direction):
+def caesar(start_text, shift_amount, cipher_direction, key_count):
     end_text = ""
     if cipher_direction == "decode":
         shift_amount *= -1
@@ -17,7 +17,7 @@ def caesar(start_text, shift_amount, cipher_direction):
             end_text += alphabet[new_position]
         else:
             end_text += char
-    print(f"Here's the {cipher_direction}d result: {end_text}")
+    print(f"Here's the {cipher_direction}d result: {end_text}, Key used: {key_count}")
 
 
 def bruteforce_attack(start_text, cipher_direction):
@@ -28,7 +28,7 @@ def bruteforce_attack(start_text, cipher_direction):
         if shift > 26:
             shift = shift % 26
 
-        caesar(start_text=start_text, shift_amount=shift, cipher_direction=cipher_direction)
+        caesar(start_text=start_text, shift_amount=shift, cipher_direction=cipher_direction, key_count=shift)
 
 
 continue_cipher = True
