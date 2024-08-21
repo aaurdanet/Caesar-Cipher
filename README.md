@@ -1,78 +1,57 @@
 Caesar Cipher Program
 
-This Python program implements a Caesar Cipher, a type of substitution cipher where each letter in the plaintext is shifted by a certain number of positions down or up the alphabet. The program can both encode and decode messages using a user-specified shift value. Additionally, it includes a brute-force attack mode to decrypt a message by trying all possible shift values.
 Features
 
-    Encoding and Decoding: The program allows users to encode a message by shifting the letters forward and decode it by shifting them backward.
-    Brute-force Attack: When decoding, the user has the option to perform a brute-force attack, which will try all possible shifts (1 through 25) to decrypt the message.
-    Input Validation: The program handles non-alphabet characters (such as numbers, spaces, and punctuation) by leaving them unchanged.
-    Continuous Use: After each operation, users are prompted to continue with another operation or exit the program.
+    Encryption and Decryption: Easily encode or decode text using the Caesar Cipher by specifying the shift value.
+    Brute Force Attack: Automatically attempts all possible shift values (1-26) to decrypt messages without a known key.
+    Custom Key Display: Shows the key used during the encryption/decryption process for better traceability.
+    User Interaction: Intuitive prompts guide users through selecting encryption, decryption, or brute force modes.
 
 Usage
-Running the Program
 
-    Starting: When the program starts, it displays a logo (imported from the art module) and then prompts the user to choose between encoding or decoding a message.
-
-    Input:
-        The user inputs whether they want to "encode" or "decode" a message.
-        If decoding, the user is asked if they want to perform a brute-force attack.
-        The user then inputs the message they want to process.
-        If not using brute-force, the user inputs the shift value (a number).
-
-    Output:
-        The program displays the encoded or decoded message.
-        If a brute-force attack was chosen, the program will display all possible decoded messages with different shifts.
-
-    Repeating: After completing one operation, the user can choose to perform another operation or exit the program.
+    Start the Program: Run the caesar.py script.
+    Select Operation:
+        Type encode to encrypt a message.
+        Type decode to decrypt a message.
+    Brute Force Option:
+        If decoding, you'll be prompted to choose whether to brute force the decryption.
+        Type yes to initiate brute force decryption.
+        Type no to proceed with a specific shift value.
+    Input Message: Enter the message you wish to encode or decode.
+    Shift Value:
+        If not using brute force, input the desired shift number (1-26).
+        The tool will adjust the shift value if it exceeds 26.
+    View Results: The tool displays the encoded/decoded message and the key used.
 
 Example
 
-    Encoding:
+python
 
-    python
-
+# Example for encoding a message
 Type 'encode' to encrypt, type 'decode' to decrypt:
 encode
 Type your message:
 hello
 Type the shift number:
 5
-Here's the encoded result: mjqqt
+Here's the encoded result: mjqqt, Key used: 5
 
-Decoding:
-
-python
-
+# Example for brute force decoding
 Type 'encode' to encrypt, type 'decode' to decrypt:
 decode
-Would you like to bruteforce? Type 'Yes'. Otherwise Type 'No'
-no
+Would you like to bruteforce? Type 'Yes'. Otherwise Type 'No':
+yes
 Type your message:
 mjqqt
-Type the shift number:
-5
-Here's the decoded result: hello
-
-Brute-force Attack:
-
-python
-
-    Type 'encode' to encrypt, type 'decode' to decrypt:
-    decode
-    Would you like to bruteforce? Type 'Yes'. Otherwise Type 'No'
-    yes
-    Type your message:
-    mjqqt
-    Here's the decoded result: lipps
-    Here's the decoded result: khoor
-    Here's the decoded result: jgnnq
-    ...
-
-Notes
-
-    The program automatically adjusts the shift value if it exceeds 26 (the length of the alphabet).
-    This is a simple implementation and assumes English alphabet (a-z).
+# The tool will display possible decoded messages with different keys.
 
 Dependencies
 
-    art module is required for displaying the logo.
+    Python 3.x
+    art library (optional for displaying ASCII art logo)
+
+Install the art library via pip if desired:
+
+bash
+
+pip install art
