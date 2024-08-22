@@ -20,7 +20,7 @@ def caesar(start_text, shift_amount, cipher_direction, key_count):
     print(f"Here's the {cipher_direction}d result: {end_text}, Key used: {key_count}")
 
 
-def bruteforce_attack(start_text, cipher_direction):
+def brute_force_attack(start_text, cipher_direction):
     shift = 0
     for i in range(0, 26):
         shift += 1
@@ -38,21 +38,21 @@ while continue_cipher:
     direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 
     if direction == "decode":
-        bruteforce_selection = input("Would you like to bruteforce? Type 'Yes'. Otherwise Type 'No'\n").lower()
+        brute_force_selection = input("Would you like to brute force? Type 'Yes'. Otherwise Type 'No'\n").lower()
     else:
-        bruteforce_selection = "no"
+        brute_force_selection = "no"
 
     text = input("Type your message:\n").lower()
 
-    if bruteforce_selection == "yes":
-        bruteforce_attack(start_text=text, cipher_direction=direction)
+    if brute_force_selection == "yes":
+        brute_force_attack(start_text=text, cipher_direction=direction)
 
     else:
 
         shift = int(input("Type the shift number:\n"))
         if shift > 26:
             shift = shift % 26
-        caesar(start_text=text, shift_amount=shift, cipher_direction=direction)
+        caesar(start_text=text, shift_amount=shift, cipher_direction=direction, key_count=shift)
 
     restart = input("Type 'yes' if you want to go again. Otherwise type 'no'.\n")
     if restart == "no":
